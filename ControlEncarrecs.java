@@ -165,7 +165,7 @@ public class ControlEncarrecs {
    public static String dataClient() {
       String text;
 
-      String regex = "^([0-2][0-9]|3[01])/(0[1-9]|1[0-2])/\\d{4}$";
+      String regex = "^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/(\\d{4})$";
       Pattern pattern = Pattern.compile(regex);
 
       System.out.println("Introueix la Data actual (DD/MM/AAAA):");
@@ -330,7 +330,7 @@ public class ControlEncarrecs {
             for (int i = 0; i < ArticlesL.size(); i++) {
                escritptura.write(
                      ArticlesL.get(i).getQuantitat() + "," + ArticlesL.get(i).getUnitats() + ","
-                           + ArticlesL.get(i).getNom());
+                           + ArticlesL.get(i).getNom() + ",");
             }
             escritptura.close();
             System.out.println("Encarrec escrit correctament en el fitxer: " + tiket);
@@ -386,13 +386,6 @@ public class ControlEncarrecs {
          } catch (IOException exception) {
             System.out.println();
             System.out.println("Error al leer archivo: ");
-         } finally {
-            System.out.println("Vols llegir un Altre fitxer?");
-            comfirmacio = Utilitats.confirmador(Utilitats.readLine());
-            if (!comfirmacio) {
-               System.out.println();
-               return;
-            }
          }
       }
    }
