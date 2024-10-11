@@ -35,4 +35,34 @@ public class Utilitats {
 
         return false;
     }
+
+    public static char triaOpcio(String resposta, int cas) {
+        resposta = resposta.toUpperCase();
+        if (cas == 1) {
+            while (true) {
+                if (resposta.length() == 1) {
+                    if (resposta.charAt(0) == 'A' || resposta.charAt(0) == 'B' || resposta.charAt(0) == 'C') {
+                        System.out.println();
+                        return Character.toUpperCase(resposta.charAt(0));
+                    }
+                }
+                System.out.println("Opció no disponible, torna a introduir la resposta");
+                resposta = (Utilitats.readLine()).toUpperCase();
+
+            }
+        } else {
+            while (true) {
+                if (resposta.length() == 1) {
+                    if (resposta.charAt(0) == 'B' || resposta.charAt(0) == 'C') {
+                        System.out.println();
+                        return Character.toUpperCase(resposta.charAt(0));
+                    }
+                }
+                System.out.println("Opció no disponible, torna a introduir la resposta");
+                resposta = (Utilitats.readLine()).toUpperCase();
+
+            }
+        }
+
+    }
 }
